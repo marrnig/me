@@ -3,9 +3,33 @@
 		<title>My Page</title>
 		<link rel="icon" type="image/x-icon" href="Blue-Canoe-Favicon-300x300.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			html, body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.fullscreen {
+				width: 100vw;
+				height: 100vh;
+				background: #0078d4;
+				color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				font-size: 2rem;
+			}
+		</style>
 	</head>
 	<body>
-		<a href="count.html">Countdown</a><br>
-		<a href="gears.html">Gears</a><br>
+		<div class="fullscreen">
+			<div>
+				<a href="count.html">Countdown</a>
+				<br>
+				<a href="gears.html">Gears</a><br>
+			</div>
+		</div>
 	</body>
 </html>

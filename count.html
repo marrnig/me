@@ -3,12 +3,61 @@
 		<title>Countdown</title>
 		<link rel="icon" type="image/x-icon" href="Blue-Canoe-Favicon-300x300.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<style>
+			html, body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				}
+				.fullscreen {
+				width: 100vw;
+				height: 100vh;
+				background: #0078d4;
+				color: white;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				font-size: 2rem;
+			}
+
+			#tickcounter-box {
+				width: 180px;
+				padding: 20px;
+				margin:  auto;
+				text-align: center;
+				background: #ffffff;
+				border-radius: 12px;
+				border: 2px solid #ddd;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+				font-family: "Segoe UI", Arial, sans-serif;
+			}
+
+			#tickcounter-number {
+				font-size: 64px;
+				font-weight: 700;
+				color: #ff0000;
+			}
+
+			#tickcounter-label {
+				font-size: 16px;
+				margin-top: 8px;
+				color: #555;
+				letter-spacing: 0.5px;
+			}
+		</style>
 	</head>
-<body>
-	<div id="tickcounter-box">
-		<div id="tickcounter-number">0</div>
-		<div id="tickcounter-label">Working days<br>remaining after today</div>
-	</div>
+	<body>
+		<div class="fullscreen">
+			<div style="margin-top: 50px;">
+				<div id="tickcounter-box">
+					<div id="tickcounter-number">0</div>
+					<div id="tickcounter-label">Working days<br>remaining after today</div>
+				</div>
+			</div>
+		</div>
+	</body>
 
 	<script>
 	// --- UK BANK HOLIDAYS (England & Wales) ---
@@ -89,31 +138,5 @@
 	// setInterval(updateWorkdayCounter, 1000);
 	</script>
 
-	<style>
-	#tickcounter-box {
-		width: 180px;
-		padding: 20px;
-		margin:  auto;
-		text-align: center;
-		background: #ffffff;
-		border-radius: 12px;
-		border: 2px solid #ddd;
-		box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-		font-family: "Segoe UI", Arial, sans-serif;
-	}
 
-	#tickcounter-number {
-		font-size: 64px;
-		font-weight: 700;
-		color: #ff0000;
-	}
-
-	#tickcounter-label {
-		font-size: 16px;
-		margin-top: 8px;
-		color: #555;
-		letter-spacing: 0.5px;
-	}
-	</style>
-	</body>
 </html>

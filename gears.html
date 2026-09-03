@@ -5,13 +5,17 @@
 	  <meta charset="UTF-8">
 	  <title>Gear Ratio Calculator</title>
 	  <style>
-		body { font-family: Arial, sans-serif; margin: 40px; }
+		body { font-family: Arial, sans-serif; margin: 40px; margin: 0; padding: 0; width: 100%; height: 100%;}
 		label { display: block; margin-top: 10px; }
 		input { width: 40px; margin-left: 10px; }
 		.result { margin-top: 20px; font-size: 1.2em; }
+		.fullscreen {width: 100vw; height: 100vh; background: #0078d4; color: white; display: flex; justify-content: center; align-items: flex-start; font-size: 2rem;}
+
 	  </style>
 	</head>
 	<body>
+		<div class="fullscreen">
+			<div>
 
 	<h2>Max & Min Gear Ratio Calculator</h2>
 
@@ -41,6 +45,8 @@
 	  </table>
 	</div>
 
+				</div>
+		</div>
 
 	<script>
 	function calculate() {
@@ -69,4 +75,5 @@
 
 	calculate();
 	</script>
+</body>
 </html>
