@@ -1,0 +1,114 @@
+<html>
+<body>
+	<div id="tickcounter-box">
+		<div id="tickcounter-number">0</div>
+		<div id="tickcounter-label">Working days<br>remaining after today</div>
+	</div>
+
+	<script>
+	// --- UK BANK HOLIDAYS (England & Wales) ---
+	// Add future years as needed
+	const ukHolidays = [
+		"2026-01-01", "2026-04-03", "2026-04-06", "2026-05-04",
+		"2026-05-25", "2026-08-31", "2026-12-25", "2026-12-28"
+	].map(d => new Date(d).toDateString());
+	const myHolidays = [
+"2026-03-20", 
+"2026-05-22", 
+"2026-07-13", 
+"2026-07-16", 
+"2026-07-17", 
+"2026-07-18", 
+"2026-07-19", 
+"2026-07-20", 
+"2026-07-21", 
+"2026-07-22", 
+"2026-07-23", 
+"2026-07-24", 
+"2026-07-25", 
+"2026-07-26", 
+"2026-07-27", 
+"2026-07-28", 
+"2026-07-29", 
+"2026-07-30", 
+"2026-07-31", 
+"2026-08-01", 
+"2026-08-02", 
+"2026-08-03", 
+"2026-09-04", 
+"2026-09-08", 
+"2026-09-09",
+"2026-09-17", 
+"2026-09-18", 
+"2026-09-19", 
+"2026-09-20", 
+"2026-09-21", 
+"2026-09-22", 
+"2026-09-23", 
+"2026-09-24", 
+"2026-09-25", 
+"2026-09-26",  
+    ].map(m => new Date(m).toDateString());
+	// --- Count workdays excluding weekends + UK holidays ---
+	function countWorkdays(start, end) {
+		let count = 0;
+		let current = new Date(start);
+        end.setDate(end.getDate() + 1);
+
+		// Start from tomorrow if you don't want to include today:
+		// current.setDate(current.getDate() + 1);
+
+		while (current <= end) {
+			const day = current.getDay();
+			const isWeekend = (day === 0 || day === 6);
+			const isHoliday = ukHolidays.includes(current.toDateString());
+			const isMyHol = myHolidays.includes(current.toDateString());
+			if (!isWeekend && !isHoliday && !isMyHol) {
+				count++;
+			}
+			current.setDate(current.getDate() + 1);
+		}
+		return count;
+	}
+
+	// --- Update display ---
+	function updateWorkdayCounter() {
+		const today = new Date();
+		const target = new Date("2026-12-31"); // ← change target date here
+
+		const workdaysLeft = countWorkdays(today, target);
+		document.getElementById("tickcounter-number").textContent = workdaysLeft;
+	}
+
+	updateWorkdayCounter();
+	// setInterval(updateWorkdayCounter, 1000);
+	</script>
+
+	<style>
+	#tickcounter-box {
+		width: 180px;
+		padding: 20px;
+		margin:  auto;
+		text-align: center;
+		background: #ffffff;
+		border-radius: 12px;
+		border: 2px solid #ddd;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+		font-family: "Segoe UI", Arial, sans-serif;
+	}
+
+	#tickcounter-number {
+		font-size: 64px;
+		font-weight: 700;
+		color: #ff0000;
+	}
+
+	#tickcounter-label {
+		font-size: 16px;
+		margin-top: 8px;
+		color: #555;
+		letter-spacing: 0.5px;
+	}
+	</style>
+	</body>
+</html>
