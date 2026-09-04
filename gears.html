@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="icon" type="image/x-icon" href="Blue-Canoe-Favicon-300x300.png">
@@ -15,65 +16,65 @@
 	</head>
 	<body>
 		<div class="fullscreen">
-			<div>
+			<div style="margin: 20px;">
+				<center>
+					<h2>Max & Min Gear Ratio Calculator</h2>
 
-	<h2>Max & Min Gear Ratio Calculator</h2>
+					<!--
+					<label>Chainring 1 (teeth): <input type="number" id="cr1" value="34"></label>
+					<label>Chainring 2 (teeth): <input type="number" id="cr2" value="50"></label>
+				
+					<label>Cassette Cog 1 (teeth): <input type="number" id="cs1" value="11"></label>
+					<label>Cassette Cog 2 (teeth): <input type="number" id="cs2" value="28"></label>
+				
+				
+					<div class="result">
+					  <strong>Minimum Ratio:</strong> <span id="minRatio">–</span><br>
+					  <strong>Maximum Ratio:</strong> <span id="maxRatio">–</span>
+					</div>
+					-->
 
-	<!--
-	<label>Chainring 1 (teeth): <input type="number" id="cr1" value="34"></label>
-	<label>Chainring 2 (teeth): <input type="number" id="cr2" value="50"></label>
+					<table>
+					<tr><td>Chainring:</td><td><input type="number" id="cr1" value="34"></td><td><input type="number" id="cr2" value="50"></td></tr>
+					<tr><td>Cassette: </td><td><input type="number" id="cs1" value="11"></td><td><input type="number" id="cs2" value="32"></td></tr>
+					</table>
 
-	<label>Cassette Cog 1 (teeth): <input type="number" id="cs1" value="11"></label>
-	<label>Cassette Cog 2 (teeth): <input type="number" id="cs2" value="28"></label>
-
-
-	<div class="result">
-	  <strong>Minimum Ratio:</strong> <span id="minRatio">–</span><br>
-	  <strong>Maximum Ratio:</strong> <span id="maxRatio">–</span>
-	</div>
-	-->
-
-	<table>
-	<tr><td>Chainring:</td><td><input type="number" id="cr1" value="34"></td><td><input type="number" id="cr2" value="50"></td></tr>
-	<tr><td>Cassette: </td><td><input type="number" id="cs1" value="11"></td><td><input type="number" id="cs2" value="32"></td></tr>
-	</table>
-
-	<div class="result">
-	  <table>
-		<tr><td><strong>Ratios:</strong></td><td><span id="minRatio">–</span></td><td>to</td><td><span id="maxRatio">–</span><br></td></tr>
-	  <tr><td><strong>Ideal:</strong></td><td><span id="TminRatio">0.82</span></td><td>to</td><td><span id="TmaxRatio">4.55</span></td></tr>
-	  </table>
-	</div>
-
-				</div>
+					<div class="result">
+						<table>
+							<tr><td><strong>Ratios:</strong></td><td><span id="minRatio">–</span></td><td>to</td><td><span id="maxRatio">–</span><br></td></tr>
+							<tr><td><strong>Ideal:</strong></td><td><span id="TminRatio">0.82</span></td><td>to</td><td><span id="TmaxRatio">4.55</span></td></tr>
+						</table>
+					</div>
+				</center>
+			</div>
 		</div>
 
-	<script>
-	function calculate() {
-	  const cr1 = Number(document.getElementById("cr1").value);
-	  const cr2 = Number(document.getElementById("cr2").value);
-	  const cs1 = Number(document.getElementById("cs1").value);
-	  const cs2 = Number(document.getElementById("cs2").value);
-
-	  const ratios = [
-		cr1 / cs1,
-		cr1 / cs2,
-		cr2 / cs1,
-		cr2 / cs2
-	  ];
-
-	  const min = Math.min(...ratios).toFixed(2);
-	  const max = Math.max(...ratios).toFixed(2);
-
-	  document.getElementById("minRatio").textContent = min;
-	  document.getElementById("maxRatio").textContent = max;
-	}
-
-	document.querySelectorAll("input").forEach(input => {
-	  input.addEventListener("input", calculate);
-	});
-
-	calculate();
-	</script>
-</body>
+		<script>
+			function calculate() {
+				const cr1 = Number(document.getElementById("cr1").value);
+				const cr2 = Number(document.getElementById("cr2").value);
+				const cs1 = Number(document.getElementById("cs1").value);
+				const cs2 = Number(document.getElementById("cs2").value);
+				
+				const ratios = [
+				cr1 / cs1,
+				cr1 / cs2,
+				cr2 / cs1,
+				cr2 / cs2
+				];
+			
+				const min = Math.min(...ratios).toFixed(2);
+				const max = Math.max(...ratios).toFixed(2);
+			
+				document.getElementById("minRatio").textContent = min;
+				document.getElementById("maxRatio").textContent = max;
+			}
+			
+			document.querySelectorAll("input").forEach(input => {
+				input.addEventListener("input", calculate);
+			});
+			
+			calculate();
+		</script>
+	</body>
 </html>
