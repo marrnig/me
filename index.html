@@ -1,37 +1,101 @@
-<!DOCTYPE html>
 <html>
 	<head>
-		<title>My Page</title>
+		<title>My Projects</title>
 		<link rel="icon" type="image/x-icon" href="Blue-Canoe-Favicon-300x300.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 		<style>
 			html, body {
 				margin: 0;
 				padding: 0;
 				width: 100%;
 				height: 100%;
+				font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 			}
 			.fullscreen {
 				width: 100vw;
 				height: 100vh;
-				background: #0078d4;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 				color: white;
 				display: flex;
+				flex-direction: column;
 				justify-content: center;
-				align-items: flex-start;
+				align-items: center;
 				text-align: center;
-				font-size: 2rem;
 			}
-			a {
-    			color: white;
+			.container {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+				align-items: center;
+			}
+			h1 {
+				font-size: 3.5rem;
+				font-weight: 700;
+				margin: 0;
+				margin-bottom: 1rem;
+				letter-spacing: -1px;
+			}
+			.subtitle {
+				font-size: 1.1rem;
+				opacity: 0.9;
+				margin: 0;
+				font-weight: 300;
+				margin-bottom: 2rem;
+			}
+			.links-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1.5rem;
+				max-width: 600px;
+			}
+			.link-card {
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 16px;
+				padding: 2rem;
+				text-decoration: none;
+				color: white;
+				transition: all 0.3s ease;
+				cursor: pointer;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			.link-card:hover {
+				background: rgba(255, 255, 255, 0.15);
+				border-color: rgba(255, 255, 255, 0.3);
+				transform: translateY(-8px);
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+			}
+			.link-card-title {
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
+			.link-card-desc {
+				font-size: 0.95rem;
+				opacity: 0.85;
+				font-weight: 300;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="fullscreen">
-			<div style="margin-top: 50px;">
-				<p><a href="count.html">Countdown</a>
-				<p><a href="gears.html">Gears</a><br>
+			<div class="container">
+				<h1>Projects</h1>
+				<p class="subtitle">Explore my interactive projects</p>
+				<div class="links-grid">
+					<a href="count.html" class="link-card">
+						<div class="link-card-title">⏱️ Countdown</div>
+						<div class="link-card-desc">Timer & countdown tool</div>
+					</a>
+					<a href="gears.html" class="link-card">
+						<div class="link-card-title">⚙️ Gears</div>
+						<div class="link-card-desc">Mechanical simulation</div>
+					</a>
+				</div>
 			</div>
 		</div>
 	</body>
