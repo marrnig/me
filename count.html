@@ -125,9 +125,9 @@
 			if (!isWeekend && !isHoliday && !isMyHol) {
 				count++;
 			}
-			current.setDate(current.getDate() );
+			current.setDate(current.getDate() + 1);
 		}
-		return count;
+		return count - 1;
 	}
 
 	// --- Update display ---
